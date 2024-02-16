@@ -7,7 +7,6 @@ import (
 	"strconv"
 )
 
-<<<<<<< HEAD
 const (
 	boardSize = 9
 	numRows   = 3
@@ -16,10 +15,6 @@ const (
 
 func main() {
 	// Create the tic-tac-toe board
-=======
-func main() {
-	// Create the board of the morpion
->>>>>>> f488b864ef4308fd92f6efe26359cf9a7deb465b
 	board := [3][3]string{
 		{" ", " ", " "},
 		{" ", " ", " "},
@@ -53,7 +48,6 @@ func play(board *[3][3]string) {
 	player := "O"
 
 	for {
-<<<<<<< HEAD
 		fmt.Printf("Player %s, enter the cell number (from 1 to 9): ", player)
 		scanner.Scan()
 		input := scanner.Text()
@@ -91,39 +85,6 @@ func play(board *[3][3]string) {
 		}
 
 		// Switch player for the next turn
-=======
-		fmt.Printf("Joueur %s, entrez le numéro de la case (de 1 à 9) : ", player)
-		scanner.Scan()
-		input := scanner.Text()
-
-		// Vérifier si l'entrée est un nombre valide
-		n, err := strconv.Atoi(input)
-		if err != nil || n < 1 || n > 9 {
-			fmt.Println("Entrez un nombre valide entre 1 et 9")
-			continue
-		}
-
-		// Convertir le numéro de la case en coordonnées du tableau
-		row := (n - 1) / 3
-		col := (n - 1) % 3
-
-		// Vérifier si la case est déjà occupée
-		if (*board)[row][col] != " " {
-			fmt.Println("Case déjà occupée, veuillez choisir une autre case.")
-			continue
-		}
-
-		// Placer le symbole du joueur dans la case correspondante du tableau
-		(*board)[row][col] = player
-
-		// Afficher le tableau mis à jour
-		printBoard(*board)
-
-		// Vérifier s'il y a un gagnant ou si le match est nul
-		// (code à ajouter ici)
-
-		// Changer de joueur pour le prochain tour
->>>>>>> f488b864ef4308fd92f6efe26359cf9a7deb465b
 		if player == "O" {
 			player = "X"
 		} else {
@@ -132,7 +93,6 @@ func play(board *[3][3]string) {
 	}
 }
 
-<<<<<<< HEAD
 func win(player1 bool, ticTacToeBoard [boardSize]string, playerSymbol1, playerSymbol2 string) bool {
 	// Determine the symbol for the current player
 	playerSymbol := playerSymbol1
@@ -185,6 +145,3 @@ func isDraw(board [3][3]string) bool {
 	}
 	return true
 }
-=======
-//faire un scanne pour demander a l'utilisateur ce qu'il veut mettre en chiffre pour le placer a la case du chiffre et convertir le chiffre par 0
->>>>>>> f488b864ef4308fd92f6efe26359cf9a7deb465b
